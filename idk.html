@@ -4,278 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Times</title>
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Times+New+Roman&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-        font-family: 'Chomsky';
-        src: url('fonts/Chomsky.otf') format('opentype');
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            background-color: #ffffff;
-            color: #000000;
-            line-height: 1.5;
-        }
-
-        .newspaper {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-        }
-
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 3px solid #000000;
-            border-top: 1px solid #000000;
-            margin-bottom: 30px;
-        }
-
-        .newspaper-title {
-            font-family: 'Chomsky', serif;
-            font-size: 4rem;
-            font-weight: 900;
-            color: #000000;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .date-info {
-            font-size: 0.9rem;
-            color: #000000;
-            border-top: 1px solid #000000;
-            border-bottom: 1px solid #000000;
-            padding: 5px 0;
-            margin: 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .right-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            border-left: 1px solid #000000;
-            padding-left: 20px;
-        }
-
-        .article {
-            border-bottom: 1px solid #cccccc;
-            padding-bottom: 20px;
-        }
-
-        .article:last-child {
-            border-bottom: none;
-        }
-
-        .headline {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #000000;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.1;
-        }
-
-        .subheading {
-            font-family: 'Old Standard TT', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .byline {
-            font-size: 0.9rem;
-            color: #000000;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-
-        .article-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            text-align: justify;
-            /* columns: 2; */
-            /* column-gap: 20px;
-            column-rule: 1px solid #cccccc; */
-        }
-
-        .article-text ol, 
-        .article-text ul {
-        margin-left: 1.5rem;
-        padding-left: 0;
-        }
-
-        .article-text li {
-        text-align: justify;
-        margin-bottom: 1rem;
-        }
-
-        .article-text a {
-        font-weight: bold;
-        color: inherit;
-        text-decoration: underline;
-        }
-
-
-        .single-column {
-            columns: 1;
-        }
-
-        .sidebar-item {
-            border: 1px solid #000000;
-            padding: 15px;
-            margin-bottom: 15px;
-            background-color: #ffffff;
-        }
-
-        .sidebar-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 10px;
-            text-align: center;
-            text-transform: uppercase;
-            border-bottom: 1px solid #000000;
-            padding-bottom: 5px;
-        }
-
-        .sidebar-text {
-            font-size: 0.9rem;
-            line-height: 1.4;
-            text-align: left;
-        }
-        
-        .sidebar-text .role-title {
-            font-weight: 600;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .sidebar-text ul {
-            padding-left: 1.2em;
-            margin: 0;
-        }
-
-        .sidebar-text li {
-            margin-bottom: 6px;
-            text-align: justify;
-        }
-
-        .divider {
-            text-align: center;
-            font-size: 1.5rem;
-            color: #000000;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .box-ad {
-            border: 2px solid #000000;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
-            background-color: #f9f9f9;
-        }
-
-        .box-ad-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        .unified-heading {
-        text-align: center;
-        font-size: 3rem;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        }
-
-        .split-articles {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        }
-        .split-articles .article:nth-child(2) {
-        border-left: 1px solid #ccc; /* Light gray vertical line */
-        padding-left: 30px; /* Add spacing so text doesn't touch the divider */
-        }
-
-        .contact-info {
-        display: flex;
-        gap: 20px; /* space between items */
-        align-items: center;
-        font-weight: bold;
-        font-size: 1rem;
-        }
-
-        .contact-info a {
-        text-decoration: underline;
-        color: inherit;
-        }
-
-
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .right-column {
-                border-left: none;
-                border-top: 1px solid #000000;
-                padding-left: 0;
-                padding-top: 20px;
-            }
-            
-            .newspaper-title {
-                font-size: 2.5rem;
-            }
-            
-            .headline {
-                font-size: 2rem;
-            }
-            
-            .article-text {
-                columns: 1;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="newspaper">
         <header class="header">
             <h1 class="newspaper-title">Adwita's Gazette</h1>
-            <div class="date-info">Published Daily Since 2025 • Volume XXIII • No. 42</div>
+            <div class="date-info">Published Daily Since 2025 • Volume XXII • No. 42</div>
         </header>
 
         <div class="main-content">
@@ -289,10 +25,10 @@
                     <div class="article-text">
                       <ol>
                         <li>
-                          <a href="#">Scratch Lab</a>: is a collection of from-scratch implementations of machine learning models, frameworks, and techniques using PyTorch (for now).
+                          <a href="https://github.com/AdwitaSingh1711/from-scratch-lab">Scratch Lab</a>: is a collection of from-scratch implementations of machine learning models, frameworks, and techniques using PyTorch (for now).
                         </li>
                         <li>
-                          <a href="#">Summarise</a>: A Flutter application to extract text from PDF files, images, etc.
+                          <a href="https://github.com/AdwitaSingh1711/summarizer_by_cb">Summarise</a>: A Flutter application to extract text from PDF files, images, etc.
                           <ul>
                             <li>Images can be uploaded from the gallery and further be cropped to size.</li>
                             <li>Summary is generated and can be exported to a PDF, which can be saved.</li>
@@ -300,7 +36,7 @@
                           </ul>
                         </li>
                         <li>
-                          <a href="#">Auto-EDA</a>: A Python command-line tool for performing EDA for projects automatically.
+                          <a href="https://github.com/AdwitaSingh1711/Auto-EDA">Auto-EDA</a>: A Python command-line tool for performing EDA for projects automatically.
                         </li>
                       </ol>
                     </div>
@@ -371,7 +107,7 @@
                 <div class="sidebar-item">
                     <h3 class="sidebar-title">About</h3>
                     <div class="sidebar-text">
-                        Hello, X this side! I'm an engineer who loves building (read: breaking) stuff and tinkering around around the huggingface library. I also write articles on ML, Data Pipelines and spend my time looking up integration problems or greek mythology.
+                        Hello, Adwita this side! I'm an engineer who loves building (read: breaking) stuff and tinkering around around the huggingface library. I also write articles on ML, Data Pipelines and spend my time looking up integration problems or reading up on Greek Mythology.
                     </div>
                 </div>
 
@@ -390,9 +126,9 @@
                 <div class="sidebar-item">
                     <h3 class="sidebar-title">Technical Skills</h3>
                     <div class="sidebar-text">
-                        <strong>Programming Languages:</strong> C/C++, Java, SQL, Python<br><br>
-                        <strong>Frameworks and Libraries:</strong> PyTorch, Transformers, FastAPI, Flask, Streamlit, Django<br><br>
-                        <strong>Tools and Platforms:</strong> Git, LaTeX, Microsoft Azure<br><br>
+                        <strong>Programming Languages:</strong> C/C++, Java, SQL, Python<br>
+                        <strong>Frameworks and Libraries:</strong> PyTorch, Transformers, FastAPI, Flask, Streamlit, Django<br>
+                        <strong>Tools and Platforms:</strong> Git, LaTeX, Microsoft Azure<br>
                         <strong>Databases:</strong> MongoDB, PostgreSQL
                     </div>
                 </div>
@@ -400,7 +136,7 @@
                 <div class="sidebar-item">
                     <h3 class="sidebar-title">Education</h3>
                     <div class="sidebar-text">
-                        Bachelor of Technology in Information Technology from Indira Gandhi Delhi Technical University for Women. <br><br>
+                        B.Tech in Information Technology from Indira Gandhi Delhi Technical University for Women, New Delhi <br><br>
                         CGPA: 8.92
                     </div>
                 </div>

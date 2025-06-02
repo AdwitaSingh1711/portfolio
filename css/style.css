@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'Chomsky';
+    src: url('../fonts/Chomsky.otf') format('opentype');
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #ffffff;
+        color: #000000;
+        line-height: 1.5;
+    }
+
+    .newspaper {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+
+    .header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 3px solid #000000;
+        border-top: 1px solid #000000;
+        margin-bottom: 30px;
+    }
+
+    .newspaper-title {
+        font-family: 'Chomsky', serif;
+        font-size: 4rem;
+        font-weight: 900;
+        color: #000000;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .date-info {
+        font-size: 0.9rem;
+        color: #000000;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        padding: 5px 0;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+    }
+
+    .left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-left: 1px solid #000000;
+        padding-left: 20px;
+    }
+
+    .article {
+        border-bottom: 1px solid #cccccc;
+        padding-bottom: 20px;
+    }
+
+    .article:last-child {
+        border-bottom: none;
+    }
+
+    .headline {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #000000;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1.1;
+    }
+
+    .subheading {
+        font-family: 'Old Standard TT', serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 15px;
+        font-style: italic;
+    }
+
+    .byline {
+        font-size: 0.9rem;
+        color: #000000;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+
+    .article-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: justify;
+        /* columns: 2; */
+        /* column-gap: 20px;
+        column-rule: 1px solid #cccccc; */
+    }
+
+    .article-text ol, 
+    .article-text ul {
+    margin-left: 1.5rem;
+    padding-left: 0;
+    }
+
+    .article-text li {
+    text-align: justify;
+    margin-bottom: 1rem;
+    }
+
+    .article-text a {
+    font-weight: bold;
+    color: inherit;
+    text-decoration: underline;
+    }
+
+
+    .single-column {
+        columns: 1;
+    }
+
+    .sidebar-item {
+        border: 1px solid #000000;
+        padding: 15px;
+        margin-bottom: 15px;
+        background-color: #ffffff;
+    }
+
+    .sidebar-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 5px;
+    }
+
+    .sidebar-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        text-align: left;
+    }
+    
+    .sidebar-text .role-title {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .sidebar-text ul {
+        padding-left: 1.2em;
+        margin: 0;
+    }
+
+    .sidebar-text li {
+        margin-bottom: 6px;
+        text-align: justify;
+    }
+
+    .divider {
+        text-align: center;
+        font-size: 1.5rem;
+        color: #000000;
+        margin: 20px 0;
+        font-weight: bold;
+    }
+
+    .box-ad {
+        border: 2px solid #000000;
+        padding: 20px;
+        text-align: center;
+        margin: 20px 0;
+        background-color: #f9f9f9;
+    }
+
+    .box-ad-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .unified-heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    }
+
+    .split-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    }
+    .split-articles .article:nth-child(2) {
+    border-left: 1px solid #ccc; /* Light gray vertical line */
+    padding-left: 30px; /* Add spacing so text doesn't touch the divider */
+    }
+
+    .contact-info {
+    display: flex;
+    gap: 20px; /* space between items */
+    align-items: center;
+    /* font-weight: bold; */
+    font-size: 1rem;
+    }
+
+    .contact-info a {
+    text-decoration: underline;
+    color: inherit;
+    }
+
+
+
+    @media (max-width: 768px) {
+        .main-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .right-column {
+            border-left: none;
+            border-top: 1px solid #000000;
+            padding-left: 0;
+            padding-top: 20px;
+        }
+        
+        .newspaper-title {
+            font-size: 2.5rem;
+        }
+        
+        .headline {
+            font-size: 2rem;
+        }
+        
+        .article-text {
+            columns: 1;
+        }
+    }
