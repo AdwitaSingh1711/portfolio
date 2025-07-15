@@ -3,162 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Times</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Times+New+Roman&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Adwita - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #d4622d;
+            background-color: #ffffff;
+            /* background-color: black; */
+            padding: 60px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3{
+            font-size: 1.0em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 1.5em;
+            font-size: 1.1em;
+        }
+
+        a {
+            color: #d4622d;
+            text-decoration: none;
+            border-bottom: 1px solid #d4622d;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            border-bottom: 2px solid #d4622d;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 0;
+            padding: 0 0 0 1.5em;  /* controls bullet position */
+        }
+
+        li {
+            margin: 0;
+            padding: 0;
+            padding-bottom: 15px;
+            /* text-indent: -0.8em;   pulls the first line left */
+            padding-left: 1.0em;   /* indents the remaining lines */
+        }
+
+        .intro {
+            font-size: 1.3em;
+            margin-bottom: 2em;
+            color: #e8884d;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2em;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .character-icon {
+            width: 120px;
+            height: 120px;
+            background-image: url('images/IMG_0153.jpg');
+            /* background-image: url('images/IMG_0157.jpg'); */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .nav {
+            position: fixed;
+            top: 340px;
+            right: 40px;
+            background-color: #ffffff;
+            padding: 1em;
+            border-radius: 12px;
+            /* box-shadow: 0 4px 12px rgba(212, 98, 45, 0.08);
+            border: 1px solid #f9e8e0; */
+            z-index: 1000;
+        }
+
+        .nav a {
+            display: block;
+            margin-bottom: 0.8em;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: none;
+            color: #ff8fa3;
+            padding: 0.4em 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:last-child {
+            margin-bottom: 0;
+        }
+
+        .nav a:hover {
+            color: #d4622d;
+            border-bottom: 1px solid #d4622d;
+            transform: translateX(-2px);
+        }
+
+
+        .contact {
+            margin-top: 4em;
+            font-size: 1.1em;
+        }
+        .contact-links a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #d4622d;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+
+        .articles {
+            margin-top: 2em;
+        }
+
+        .article-item {
+            margin-bottom: 1.5em;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid #f9e8e0;
+        }
+
+        .article-item:last-child {
+            border-bottom: none;
+        }
+
+        .article-title {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+
+        .article-description {
+            color: #e8884d;
+            font-size: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        .article-date {
+            color: #ff8fa3;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 20px;
+                padding-right: 120px;
+            }
+            
+            h1 {
+                font-size: 2em;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3em;
+            }
+
+            .character-icon {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .intro {
+                font-size: 1.2em;
+            }
+
+            .header-container {
+                flex-direction: column;
+            }
+
+            .nav {
+                top: 40px;
+                right: 20px;
+                padding: 0.8em;
+            }
+
+            .nav a {
+                font-size: 0.75em;
+                margin-bottom: 0.6em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="newspaper">
-        <header class="header">
-            <h1 class="newspaper-title">Adwita's Gazette</h1>
-            <div class="date-info">Published Daily Since 2002 • Volume XXII • No. 2025</div>
-        </header>
-
-        <div class="main-content">
-            <div class="left-column">
-                <!-- <h2 class="headline unified-heading">Developer's Portfolio</h2> -->
-              
-                <div class="split-articles">
-                  <article class="article">
-                    <h3 class="subheading">CURRENT/PREVIOUS PROJECTS</h3>
-                    <div class="byline">Courtesy of my Friends</div>
-                    <div class="article-text">
-                      <ol>
-                        <li>
-                          <a href="https://github.com/AdwitaSingh1711/from-scratch-lab">Scratch Lab</a>: is a collection of from-scratch implementations of machine learning models, frameworks, and techniques using PyTorch (for now).
-                        </li>
-                        <li>
-                          <a href="https://github.com/AdwitaSingh1711/summarizer_by_cb">Summarise</a>: A Flutter application to extract text from PDF files, images, etc.
-                          <ul>
-                            <li>Images can be uploaded from the gallery and further be cropped to size.</li>
-                            <li>Summary is generated and can be exported to a PDF, which can be saved.</li>
-                            <li>Built as part of Celestial Biscuit IGDTUW</li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="https://github.com/AdwitaSingh1711/Auto-EDA">Auto-EDA</a>: A Python command-line tool for performing EDA for projects automatically (work in progress).
-                        </li>
-                      </ol>
-                    </div>
-                  </article>
-              
-                  <article class="article">
-                    <h3 class="subheading">DEVELOPER'S BLOGS</h3>
-                    <div class="byline">By the voices inside my head</div>
-                    <div class="article-text single-column">
-                        <div class="article-text">
-                            <ol>
-                              <li>
-                                <a href="https://www.notion.so/Understanding-ADAM-Optimizer-20425c8ce8de8060a7a1eac0080e82f9">Understanding the Adam Optimizer</a>: Implementation based on the original paper.
-                              </li>
-                              <li>
-                                <a href="https://selective-jersey-d55.notion.site/How-To-Write-The-Backward-Pass-of-any-Network-20025c8ce8de802cb865ea357c9b2414">How To Write The Backward pass of any Neural Network</a>: Derives the backward pass of a RandomNet. Also a prerequisite to Adam's implementation.
-                              </li>
-                              <li>
-                                <a href="https://selective-jersey-d55.notion.site/RNN-from-scratch-1fa25c8ce8de80629048f528e84a6136">Vanilla RNN from Scratch</a>: Does not include BPTT (yet), if that is what you came hunting for. The rest is there. 
-                              </li>
-                              <li>
-                                <a href="https://selective-jersey-d55.notion.site/Implementing-BPE-13f25c8ce8de807eb42bd85953092842">Implementing BPE</a>: A straightforward implementation of BPE's algorithm as a precursor to Sentence Piece.
-                              </li>
-                            </ol>
-                          </div>
-                    </div>                  
-                </div>
-                <hr>
-                <div>
-                    <h3 class="subheading">ACCEPTED PUBLICATIONS</h3>
-                    <div class="byline">By the voices inside my head</div>
-                    <div class="article-text single-column">
-                        <div class="article-text">
-                            <ul>
-                                <li>
-                                    “Mitigating Hallucinations in Small Language Models: A Performance Analysis of DoLa Optimization for Mobile Devices.” NETCRYPT 2025, New Delhi, May 2025. (IEEE Conference Record Number: 65877)
-                                </li>
-                                <li>
-                                    “House of Mirrors: A survey on Hallucination Detection and Mitigation via Decoding Techniques in Language Models” (Survey), ICDAM 2025, London, UK, Springer LNNS, Scopus indexed.
-                                </li>
-                                <li>
-                                    “Tom And Jerry Chase : Ransomware Analysis and Detection At A Glance” (Survey), ICCCNet 2025, Manchester, UK, Springer LNNS, Scopus indexed.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                  </article>
-                </div>
-                <hr>
-                <div>
-                    <div class = "article-text contact-info">
-                        <span><strong>Email:</strong> adwita.s.at07@gmail.com</span>
-                        <strong><a href="https://www.linkedin.com/in/adwita-singh-322a0122a/">LinkedIn</a></strong>
-                        <strong><a href="https://github.com/AdwitaSingh1711">GitHub</a></strong>
-
-                    </div>
-
-                </div>
-              
-                <!-- <div class="box-ad">
-                  <div class="box-ad-title">Available for New Projects</div>
-                  <div>Contact for professional web development services and consultation</div>
-                </div> -->
-              </div>
-              
-
-            <div class="right-column">
-                <div class="sidebar-item">
-                    <h3 class="sidebar-title">About</h3>
-                    <div class="sidebar-text">
-                        Hello, Adwita this side! I'm an engineer who loves building (read: breaking) stuff and tinkering around around the huggingface library. I also write articles on ML, Data Pipelines and spend my time looking up integration problems or reading up on Greek Mythology.
-                    </div>
-                </div>
-
-                <div class="sidebar-item">
-                    <h3 class="sidebar-title">Experience</h3>
-                    <div class="sidebar-text">
-                        <span class="role-title">Data Engineering Intern, Providence:</span>
-                        <ul>
-                            <li>Contributed to migration of data engineering solutions, ensuring the continuity of data processes by utilising SQL and various Azure services.</li>
-                            <li>Automated a week-long manual task using Python and Flask with Language Models, reducing developer time by 86% and improving process efficiency.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-
-                <div class="sidebar-item">
-                    <h3 class="sidebar-title">Technical Skills</h3>
-                    <div class="sidebar-text">
-                        <strong>Programming Languages:</strong> C/C++, Java, SQL, Python<br>
-                        <strong>Frameworks and Libraries:</strong> PyTorch, Transformers, FastAPI, Flask, Streamlit, Django<br>
-                        <strong>Tools and Platforms:</strong> Git, LaTeX, Microsoft Azure<br>
-                        <strong>Databases:</strong> MongoDB, PostgreSQL
-                    </div>
-                </div>
-
-                <div class="sidebar-item">
-                    <h3 class="sidebar-title">Education</h3>
-                    <div class="sidebar-text">
-                        B.Tech in Information Technology from Indira Gandhi Delhi Technical University for Women, New Delhi <br><br>
-                        CGPA: 8.92
-                    </div>
-                </div>
-
-                <!-- <div class="sidebar-item">
-                    <h3 class="sidebar-title">Contact</h3>
-                    <div class="sidebar-text">
-                        <strong>Email:</strong> adwita.s.at07@gmail.com<br>
-                        <strong><a href="https://www.linkedin.com/in/adwita-singh-322a0122a/">LinkedIn</a></strong>
-                        <strong><a href="https://github.com/AdwitaSingh1711">GitHub</a></strong>
-                    </div>
-                </div> -->
-
-
-                <!-- <div class="sidebar-item">
-                    <h3 class="sidebar-title">Latest News</h3>
-                    <div class="sidebar-text">
-                        Currently working on exciting new projects involving modern web frameworks and cloud technologies. Always exploring new ways to improve user experience.
-                    </div>
-                </div> -->
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <h1>
+                    Adwita
+                    <span class="character-icon"></span>
+                </h1>
+                <p class="intro">Writing code that thinks.</p>
             </div>
         </div>
-    </div>
+        
+        <nav class="nav">
+            <a href="#writing">Blogs</a>
+            <a href="#work">Projects</a>
+            <a href="#publications">Publications</a>
+            <a href="#about">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="writing">
+        <h2>Blogs</h2>
+        <div class="articles">
+            <div class="article-item">
+                <div class="article-title">
+                    <a href="https://medium.com/@Nayonae/understanding-adam-optimizer-f525dfdd63e0">Understanding ADAM Optimizer</a>
+                </div>
+                <div class="article-description">
+                    Builds on the original 2014 paper's implementation of ADAM for convex loss functions.
+                </div>
+                <div class="article-date">June 2025</div>
+            </div>
+
+            <div class="article-item">
+                <div class="article-title">
+                    <a href="https://medium.com/@Nayonae/implementing-byte-pair-encoding-3d7311978f88">Implementing Byte Pair Encoding</a>
+                </div>
+                <div class="article-description">
+                    Implements a simple Byte Pair Encoding based tokenizer with a small insight from Information Retrieval by Christopher D. Manning.
+                </div>
+                <div class="article-date">June 2025</div>
+            </div>
+
+            <div class="article-item">
+                <div class="article-title">
+                    <a href="https://medium.com/@Nayonae/how-to-write-the-backward-pass-of-any-neural-network-7bf04e0b4ee2">How To Write The Backward Pass of Any Neural Network</a>
+                </div>
+                <div class="article-description">
+                    Shows a generalised approach to write the backward pass of any neural network-based architecture.
+                </div>
+                <div class="article-date">June 2025</div>
+            </div>
+
+            <div class="article-item">
+                <div class="article-title">
+                    <a href="https://selective-jersey-d55.notion.site/RNN-from-scratch-1fa25c8ce8de80629048f528e84a6136?source=copy_linkt">RNN From Scratch</a>
+                </div>
+                <div class="article-description">
+                    A simple Recurrent Neural Network implementation with Cross Entropy Loss. 
+                </div>
+                <div class="article-date">May 2025</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2>Projects</h2>
+        <div class="article-item">
+            <div class="article-title">
+                <a href="https://pypi.org/project/divepy/0.1.2/">DivePy</a>
+            </div>
+            <div class="article-description">
+                A PyPI package for automating EDA on CSV and Excel files. Automates data cleaning, visualisation dashboard creation, and Ollama integration for recommendations. 
+            </div>
+            <div class="article-date">June 2025</div>
+        </div>
+        <div class="article-item">
+            <div class="article-title">
+                <a href="https://github.com/mridu-pant/summarizer_by_cb">Summariser: a summarization Flutter Application</a>
+            </div>
+            <div class="article-description">
+                Developed a Flutter application by utilizing Cohere’s Summarization API (deployed with Pythonanywhere) and Firebase OCR to extract data out of texts and images and present concise summaries out of it.
+            </div>
+            <div class="article-date">March 2023</div>
+        </div>
+        <div class="article-item">
+            <div class="article-title">
+                <a href="https://github.com/AdwitaSingh1711/from-scratch-lab">Scratch Lab</a>
+            </div>
+            <div class="article-description">
+                Scratch Lab is a collection of from-scratch implementations of machine learning techniques using Python, with supporting blogs on Medium.
+            </div>
+            <div class="article-date">Ongoing</div>
+        </div>
+        <div class="article-item">
+            <div class="article-title">
+                <a href="https://github.com/AdwitaSingh1711/Scrubber">Scrubber</a>
+            </div>
+            <div class="article-description">
+                A browser extension that automatically detects and replaces sensitive words in input fields on AI-related websites such as GPT, Claude, etc to protect your privacy.
+            </div>
+            <div class="article-date">June 2025</div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="article-item">
+            <div class="article-title">
+                <a href="https://github.com/AdwitaSingh1711/Scrubber">Springer LNNS: House of Mirrors: Survey on Decoding Techniques to Detect & Mitigate Hallucinations — ICDAM
+                    2025.</a>
+            </div>
+            <!-- <div class="article-description">
+                A browser extension that automatically detects and replaces sensitive words in input fields on AI-related websites such as GPT, Claude, etc to protect your privacy.
+            </div> -->
+            <div class="article-date">June 2025</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Experience</h2>
+        <h3>Data Engineering Intern, Providence India</h3>
+        <div>
+            <ul>
+                <li>
+                    Migrated legacy ETL workflows on SSMS to Azure Data Factory pipelines using metadata-driven workflows to automate full and incremental SQL data pipelines across internal data constituting 20+ tables.
+                </li>
+                <li>
+                    Built a Flask tool for internal reporting and output validation, reducing developer time by 86%, supporting internal governance goals
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer id="contact" class="contact">
+        <h2>Contact</h2>
+        <!-- <p class = "contact-links">
+            <a href="mailto:adwita.s.at07@gmail.com">adwita.s.at07@gmail.com</a>
+            <a href="https://twitter.com/alexchen">Twitter</a>
+            <a href="https://www.linkedin.com/in/adwita-singh-322a0122a/">LinkedIn</a>
+        </p> -->
+        <p class="contact-links">
+            <a href="mailto:adwita.s.at07@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://x.com/33callsToCurtis"><i class="fab fa-x"></i></a>
+            <a href="https://linkedin.com/in/alexchen"><i class="fab fa-linkedin"></i></a>
+            <a href="https://medium.com/@Nayonae"><i class="fab fa-medium"></i></a>
+            <a href="https://github.com/AdwitaSingh1711"><i class="fab fa-github"></i></a>
+        </p>
+        
+    </footer>
 </body>
 </html>
